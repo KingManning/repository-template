@@ -1,9 +1,10 @@
 ---
-type: Reference
-title: Default Documentation Rules
-description: Normative rules for human and AI authors maintaining the knowledge bundle.
-tags: [documentation, governance, okf]
----
+type: Standard
+title: Documentation Standards
+description: Requirements for authoring, organizing, maintaining, and reviewing the OKF knowledge bundle.
+tags: [standards, documentation, governance, okf]
+-------------------------------------------------
+
 
 These rules govern documentation authored in `.okf/`. They supplement the format requirements in the [OKF specification](/references/okf-specification.md). `MUST` identifies a requirement; `SHOULD` identifies the expected default unless a documented reason justifies an exception.
 
@@ -45,7 +46,7 @@ These rules govern documentation authored in `.okf/`. They supplement the format
 * An `index.md` is a navigation surface, not a second documentation surface. It SHOULD list the directory's concepts and subdirectories with short descriptions.
 * Every new concept SHOULD be discoverable from its nearest useful index.
 * Links SHOULD use meaningful text and identify the relationship to the target. Avoid unnecessary repeat links and links that merely replace a short definition.
-* Links should be in the format of [linked document's name]\(linked document's location\), e.g. [Documentation Rules](./documentation-rules.md). Where a document has a name that may overlap, incorporate the document's location into the name e.g. [Backend README](../backend/README.md).
+* Links should be in the format of [linked document's name]\(linked document's location\), e.g. [Documentation Rules](./documentation.md). Where a document has a name that may overlap, incorporate the document's location into the name e.g. [Backend README](../../backend/README.md).
 
 
 # Writing and evidence
@@ -77,4 +78,4 @@ Before accepting documentation, confirm that:
 
 # Related concepts
 
-These rules use the [controlled type vocabulary](/references/type-vocabulary.md) and govern the [documentation standards stage](/roadmap/product/stage-minus-01-documentation.md).
+These rules use the [controlled type vocabulary](/references/type-vocabulary.md).
