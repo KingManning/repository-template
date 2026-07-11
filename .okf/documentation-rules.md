@@ -45,7 +45,8 @@ These rules govern documentation authored in `.okf/`. They supplement the format
 * An `index.md` is a navigation surface, not a second documentation surface. It SHOULD list the directory's concepts and subdirectories with short descriptions.
 * Every new concept SHOULD be discoverable from its nearest useful index.
 * Links SHOULD use meaningful text and identify the relationship to the target. Avoid unnecessary repeat links and links that merely replace a short definition.
-* Links should be in the format of [`linked document's name`]\(linked document's location\), e.g. [`Documentation Rules`](./documentation-rules.md)
+* Links should be in the format of [`linked document's name`]\(linked document's location\), e.g. [`Documentation Rules`](./documentation-rules.md). Where a document has a name that may overlap, use the location e.g. [`backend/README.md`](../backend/README.md).
+
 
 # Writing and evidence
 
