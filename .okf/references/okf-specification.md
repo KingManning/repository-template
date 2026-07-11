@@ -13,7 +13,3 @@ The format treats each non-reserved Markdown file as a concept with YAML frontma
 # Citations
 
 [1] [Open Knowledge Format v0.1 draft](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
-
-# Related concepts
-
-VectorFlow constrains the specification's open type field through the [controlled type vocabulary](/references/type-vocabulary.md) and records migrated material in the [source coverage map](/references/source-map.md).

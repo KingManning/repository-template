@@ -1,7 +1,7 @@
 ---
 type: Reference
-title: VectorFlow Documentation Rules
-description: Normative rules for human and AI authors maintaining the VectorFlow knowledge bundle.
+title: Default Documentation Rules
+description: Normative rules for human and AI authors maintaining the knowledge bundle.
 tags: [documentation, governance, okf]
 ---
 
