@@ -18,5 +18,10 @@
     "!**/build/**",
     "!**/dist/**",
     "!**/coverage/**"
-  ]
+  ],
+
+  "material-icon-theme.folders.associations": {
+    ".okf": "docs"
+  }
 }
+
