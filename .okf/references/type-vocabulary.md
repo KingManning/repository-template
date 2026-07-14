@@ -17,4 +17,4 @@ Every non-reserved concept uses exactly one of the following type values. Tags, 
 
 # Related concepts
 
-The [OKF specification](/references/okf-specification.md) requires a non-empty type but permits producer-defined values.
+The [OKF specification](./okf-specification.md) requires a non-empty type but permits producer-defined values.

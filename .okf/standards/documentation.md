@@ -5,7 +5,7 @@ description: Requirements for authoring, organizing, maintaining, and reviewing 
 tags: [standards, documentation, governance, okf]
 ---
 
-These rules govern documentation authored in `.okf/`. They supplement the format requirements in the [OKF specification](/references/okf-specification.md). `MUST` identifies a requirement; `SHOULD` identifies the expected default unless a documented reason justifies an exception.
+These rules govern documentation authored in `.okf/`. They supplement the format requirements in the [OKF specification](../references/okf-specification.md). `MUST` identifies a requirement; `SHOULD` identifies the expected default unless a documented reason justifies an exception.
 
 # Current truth and planned work
 
@@ -76,4 +76,4 @@ Before accepting documentation, confirm that:
 
 # Related concepts
 
-These rules use the [controlled type vocabulary](/references/type-vocabulary.md).
+These rules use the [controlled type vocabulary](../references/type-vocabulary.md).

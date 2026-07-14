@@ -1,6 +1,6 @@
 {
-  // Run Markdownlint when a Markdown file is saved.
-  "markdownlint.run": "onSave",
+  // Run Markdownlint while editing a Markdown file.
+  "markdownlint.run": "onType",
 
   // Files checked by the "Markdownlint: Lint Workspace" command.
   "markdownlint.lintWorkspaceGlobs": [
