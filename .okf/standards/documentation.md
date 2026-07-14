@@ -3,8 +3,7 @@ type: Standard
 title: Documentation Standards
 description: Requirements for authoring, organizing, maintaining, and reviewing the OKF knowledge bundle.
 tags: [standards, documentation, governance, okf]
--------------------------------------------------
-
+---
 
 These rules govern documentation authored in `.okf/`. They supplement the format requirements in the [OKF specification](/references/okf-specification.md). `MUST` identifies a requirement; `SHOULD` identifies the expected default unless a documented reason justifies an exception.
 
@@ -47,7 +46,6 @@ These rules govern documentation authored in `.okf/`. They supplement the format
 * Every new concept SHOULD be discoverable from its nearest useful index.
 * Links SHOULD use meaningful text and identify the relationship to the target. Avoid unnecessary repeat links and links that merely replace a short definition.
 * Links should be in the format of [linked document's name]\(linked document's location\), e.g. [Documentation Rules](./documentation.md). Where a document has a name that may overlap, incorporate the document's location into the name e.g. [Backend README](../../backend/README.md).
-
 
 # Writing and evidence
 

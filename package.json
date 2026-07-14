@@ -1,0 +1,11 @@
+{
+  "name": "repository-template",
+  "private": true,
+  "scripts": {
+    "lint:markdown": "markdownlint-cli2 \"**/*.{md,markdown}\" \".github/**/*.{md,markdown}\" \".okf/**/*.{md,markdown}\" \"#node_modules\" \"#bin\" \"#obj\" \"#build\" \"#dist\" \"#coverage\"",
+    "lint:markdown:fix": "markdownlint-cli2 --fix \"**/*.{md,markdown}\" \".github/**/*.{md,markdown}\" \".okf/**/*.{md,markdown}\" \"#node_modules\" \"#bin\" \"#obj\" \"#build\" \"#dist\" \"#coverage\""
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "0.23.0"
+  }
+}

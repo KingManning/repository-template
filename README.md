@@ -4,7 +4,7 @@ The default setup for my repos
 
 ## What this repo contains
 
-- `.okf/` - repository documentation hub.
+- `.okf/` - Repository documentation hub.
 - `.github/` - Pull request template, Copilot instructions.
 
 ## Current State
