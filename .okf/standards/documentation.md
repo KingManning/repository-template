@@ -44,8 +44,22 @@ These rules govern documentation authored in `.okf/`. They supplement the format
 
 * An `index.md` is a navigation surface, not a second documentation surface. It SHOULD list the directory's concepts and subdirectories with short descriptions.
 * Every new concept SHOULD be discoverable from its nearest useful index.
-* Links SHOULD use meaningful text and identify the relationship to the target. Avoid unnecessary repeat links and links that merely replace a short definition.
-* Links should be in the format of [linked document's name]\(linked document's location\), e.g. [Documentation Rules](./documentation.md). Where a document has a name that may overlap, incorporate the document's location into the name e.g. [Backend README](../../backend/README.md).
+* Link text SHOULD use the target document's title where it reads naturally. Where a target may be ambiguous, qualify the link text, for example `[Backend README](../../backend/README.md)`.
+* Internal Markdown links MUST be relative to the current file:
+  * Use `./` for targets in the same directory or a child directory, for example `[Coding Standards](./coding.md)`.
+  * Use `../` for targets in a parent or sibling directory, for example `[Type Vocabulary](../references/type-vocabulary.md)`.
+
+  * Links from a repository-root Markdown file to a descendant MUST begin with `./`, for example:
+
+    ```bash
+    [Documentation Rules](./.okf/standards/documentation.md)
+    ```
+
+  * Do not use repository-root-relative paths such as `/.okf/standards/documentation.md`.
+
+* Repository README references intended to direct the reader to an existing file, directory, or concept MUST use a Markdown link.
+* Paths used only as commands, configuration values, examples, output locations, or implementation terminology MAY remain as inline code.
+* Use the [Scripts README](../../scripts/README.md) for Markdown link validation and repair instructions.
 
 # Writing and evidence
 
