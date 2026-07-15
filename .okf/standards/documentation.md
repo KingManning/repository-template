@@ -76,6 +76,12 @@ These rules govern documentation authored in `.okf/`. They supplement the format
 * Documentation changes SHOULD be reviewed like code, including checks for accuracy, duplication, valid links, scope placement, and readable structure.
 * Human and AI authors follow the same rules. AI-authored content requires the same source inspection, verification, and review as human-authored content.
 
+# Diagrams
+
+* Use Mermaid when a flow, relationship, hierarchy, state, or system boundary is clearer visually than in prose.
+* Do not create a diagram when a short paragraph, list, or table is clearer.
+* Diagrams must add clarity, use canonical terminology, and be updated with the documentation they support.
+
 # Review checklist
 
 Before accepting documentation, confirm that:
