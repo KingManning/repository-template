@@ -1,2 +1,39 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Store and check out Git-recognized text as LF on every operating system.
+* text=auto eol=lf
+
+# Keep native Windows command scripts compatible with Windows tooling.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Treat common image, document, font, media, and archive formats as binary.
+*.avif binary
+*.bmp binary
+*.gif binary
+*.ico binary
+*.jpeg binary
+*.jpg binary
+*.png binary
+*.webp binary
+*.pdf binary
+*.eot binary
+*.otf binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.mp3 binary
+*.mp4 binary
+*.mov binary
+*.ogg binary
+*.wav binary
+*.webm binary
+*.7z binary
+*.gz binary
+*.rar binary
+*.tar binary
+*.tgz binary
+*.zip binary
+
+# Generated repositories must adapt these patterns and exceptions to their files.
+# Add binary/-text rules for other binary formats, generated output, and
+# byte-sensitive fixtures. Independently maintained applications may add scoped
+# .gitattributes files for their own needs.
