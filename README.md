@@ -4,12 +4,15 @@ The default setup for my repos
 
 ## What this repo contains
 
-- `.github/` - Pull request template, Copilot instructions.
-- `.okf/` - Repository documentation hub.
-- `.vscode/` - Contains basic VS Code settings for the repository and recommended extensions.
-- `backend/` - Contains example backend for this repository - used to showcase correct okf linking.
-- `scripts/` - Contains a script for fixing broken markdown links in the repository.
-- `Agents.md/` - For global agent repository instructions.
+- [`.github/`](./.github) - pull request template and Copilot instructions.
+- [`.okf/`](./.okf) - repository documentation hub.
+- [`.vscode/`](./.vscode) - shared editor settings and recommended extensions.
+- [`scripts/`](./scripts) - repository-maintenance scripts.
+- [`tests/`](./tests) - focused tests for repository tooling.
+- [`AGENTS.md`](./AGENTS.md) - repository-wide agent instructions.
+- [`.markdownlint.jsonc`](./.markdownlint.jsonc) and
+  [`.markdownlint-cli2.jsonc`](./.markdownlint-cli2.jsonc) - Markdown rules,
+  file selection, and exclusions.
 
 ## Current State
 

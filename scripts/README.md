@@ -4,16 +4,23 @@ Contains repository scripts for various tasks, such as fixing markdown links, ge
 
 ## Structure
 
-- `fix_markdown_links.py` - script to fix broken markdown links in the repository.
+- [`fix_markdown_links.py`](./fix_markdown_links.py) - validates and repairs
+  repository Markdown links.
 
 ## Fix Markdown Links
 
-Run with
+Run the link validator from the repository root:
 
-```bash
+```powershell
 # Preview changes
-py .\scripts\fix_markdown_links.py
+npm run lint:links
 
 # Apply changes
-py .\scripts\fix_markdown_links.py --write
+npm run lint:links:fix
 ```
+
+The root `npm run lint` command combines the link scan with Markdownlint.
+`npm run lint:fix` runs both repair commands.
+
+The focused link-resolver tests live in
+[Repository Tooling Tests](../tests/README.md).

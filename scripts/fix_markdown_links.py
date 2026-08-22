@@ -125,37 +125,52 @@ def candidate_targets(
     if normalized.startswith("./"):
         normalized = normalized[2:]
 
-    direct_candidates: list[Path] = []
-
     if decoded.startswith("/"):
         # Treat /path/to/file.md as repository-root-relative.
-        direct_candidates.append(root / normalized)
+        repository_root_candidate = root / normalized
+        if (
+            repository_root_candidate.exists()
+            and is_same_or_inside(repository_root_candidate.resolve(), root)
+            and not is_excluded(repository_root_candidate, excluded_paths)
+        ):
+            return [repository_root_candidate.resolve()]
     else:
-        # Standard Markdown behaviour: resolve from the source file.
-        direct_candidates.append(source_file.parent / decoded)
+        # Standard Markdown behavior is authoritative when the source-relative
+        # target exists. Repair fallbacks must not make a valid link ambiguous.
+        source_relative_candidate = source_file.parent / decoded
+        if (
+            source_relative_candidate.exists()
+            and is_same_or_inside(source_relative_candidate.resolve(), root)
+            and not is_excluded(source_relative_candidate, excluded_paths)
+        ):
+            return [source_relative_candidate.resolve()]
+
+        repair_candidates: list[Path] = []
 
         # Repair duplicated current-directory paths such as
         # ./standards/coding.md from a file already inside standards/.
         parts = Path(normalized).parts
         if parts and parts[0] == source_file.parent.name and len(parts) > 1:
-            direct_candidates.append(source_file.parent.joinpath(*parts[1:]))
+            repair_candidates.append(
+                source_file.parent.joinpath(*parts[1:])
+            )
 
         # Also allow a broken path that was written as repository-root-relative
         # without a leading slash.
-        direct_candidates.append(root / normalized)
+        repair_candidates.append(root / normalized)
 
-    valid_direct = deduplicate(
-        [
-            candidate
-            for candidate in direct_candidates
-            if candidate.exists()
-            and is_same_or_inside(candidate.resolve(), root)
-            and not is_excluded(candidate, excluded_paths)
-        ]
-    )
+        valid_repairs = deduplicate(
+            [
+                candidate
+                for candidate in repair_candidates
+                if candidate.exists()
+                and is_same_or_inside(candidate.resolve(), root)
+                and not is_excluded(candidate, excluded_paths)
+            ]
+        )
 
-    if valid_direct:
-        return valid_direct
+        if valid_repairs:
+            return valid_repairs
 
     # Last-resort repair: find an exact, unique repository path suffix.
     # This fixes paths such as /architecture/technology-stack.md when the
@@ -166,6 +181,8 @@ def candidate_targets(
 
     suffix_matches: list[Path] = []
     for candidate in repository_paths:
+        if not is_same_or_inside(candidate.resolve(), root):
+            continue
         relative = candidate.relative_to(root).as_posix()
         if relative == suffix or relative.endswith(f"/{suffix}"):
             suffix_matches.append(candidate)
@@ -176,8 +193,14 @@ def candidate_targets(
 def relative_link(target: Path, source_file: Path) -> str:
     relative = os.path.relpath(target, source_file.parent).replace(os.sep, "/")
 
-    # Enforce ./ for same-directory and child-directory links.
-    if not relative.startswith("."):
+    # Enforce explicit relative prefixes. Checking for a leading dot alone is
+    # insufficient because hidden paths such as .okf/ and .github/ also begin
+    # with a dot but still require an explicit ./ prefix.
+    if relative == ".":
+        relative = "./"
+    elif relative == "..":
+        relative = "../"
+    elif not relative.startswith(("./", "../")):
         relative = f"./{relative}"
 
     return quote(relative, safe="/.@_-~")

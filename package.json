@@ -2,8 +2,12 @@
   "name": "repository-template",
   "private": true,
   "scripts": {
-    "lint:markdown": "markdownlint-cli2 \"**/*.{md,markdown}\" \".github/**/*.{md,markdown}\" \".okf/**/*.{md,markdown}\" \"#node_modules\" \"#bin\" \"#obj\" \"#build\" \"#dist\" \"#coverage\"",
-    "lint:markdown:fix": "markdownlint-cli2 --fix \"**/*.{md,markdown}\" \".github/**/*.{md,markdown}\" \".okf/**/*.{md,markdown}\" \"#node_modules\" \"#bin\" \"#obj\" \"#build\" \"#dist\" \"#coverage\""
+    "lint": "npm run lint:links && npm run lint:markdown",
+    "lint:fix": "npm run lint:links:fix && npm run lint:markdown:fix",
+    "lint:links": "py scripts/fix_markdown_links.py",
+    "lint:links:fix": "py scripts/fix_markdown_links.py --write",
+    "lint:markdown": "markdownlint-cli2",
+    "lint:markdown:fix": "markdownlint-cli2 --fix"
   },
   "devDependencies": {
     "markdownlint-cli2": "0.23.0"

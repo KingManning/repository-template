@@ -2,23 +2,8 @@
   // Run Markdownlint while editing a Markdown file.
   "markdownlint.run": "onType",
 
-  // Files checked by the "Markdownlint: Lint Workspace" command.
-  "markdownlint.lintWorkspaceGlobs": [
-    "**/*.{md,markdown}",
-
-    // Explicitly include Markdown in known hidden documentation directories.
-    ".github/**/*.{md,markdown}",
-    ".okf/**/*.{md,markdown}",
-
-    // Ignore version control, dependencies and generated output.
-    "!**/.git/**",
-    "!**/node_modules/**",
-    "!**/bin/**",
-    "!**/obj/**",
-    "!**/build/**",
-    "!**/dist/**",
-    "!**/coverage/**"
-  ],
+  // Use the root markdownlint-cli2 globs for workspace linting.
+  "markdownlint.lintWorkspaceGlobs": [],
 
   "material-icon-theme.folders.associations": {
     ".okf": "docs"

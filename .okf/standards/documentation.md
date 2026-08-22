@@ -44,7 +44,7 @@ These rules govern documentation authored in `.okf/`. They supplement the format
 
 * An `index.md` is a navigation surface, not a second documentation surface. It SHOULD list the directory's concepts and subdirectories with short descriptions.
 * Every new concept SHOULD be discoverable from its nearest useful index.
-* Link text SHOULD use the target document's title where it reads naturally. Where a target may be ambiguous, qualify the link text, for example `[Backend README](../../backend/README.md)`.
+* Link text SHOULD use the target document's title where it reads naturally. Where a target may be ambiguous, qualify the link text, for example `[Repository README](../../README.md)`.
 * Internal Markdown links MUST be relative to the current file:
   * Use `./` for targets in the same directory or a child directory, for example `[Coding Standards](./coding.md)`.
   * Use `../` for targets in a parent or sibling directory, for example `[Type Vocabulary](../references/type-vocabulary.md)`.
@@ -81,6 +81,23 @@ These rules govern documentation authored in `.okf/`. They supplement the format
 * Use Mermaid when a flow, relationship, hierarchy, state, or system boundary is clearer visually than in prose.
 * Do not create a diagram when a short paragraph, list, or table is clearer.
 * Diagrams must add clarity, use canonical terminology, and be updated with the documentation they support.
+
+# Markdown validation
+
+All Markdown documentation must comply with the repository
+[Markdownlint rule configuration](../../.markdownlint.jsonc), which owns the
+lint rules and their treatment of OKF YAML frontmatter. The
+[markdownlint-cli2 configuration](../../.markdownlint-cli2.jsonc) owns
+repository file selection and exclusions. The
+[root npm manifest](../../package.json) owns the combined validation commands,
+and the [workspace editor settings](../../.vscode/settings.json) use the same
+file selection.
+
+After creating or modifying Markdown files, run:
+
+```powershell
+npm run lint
+```
 
 # Review checklist
 
