@@ -31,9 +31,14 @@ EXTERNAL_PREFIXES = (
 
 DEFAULT_EXCLUDES = (
     ".git",
-    "frontend/node_modules",
-    "frontend/.next",
     "node_modules",
+    ".next",
+    ".pytest_cache",
+    "bin",
+    "obj",
+    "build",
+    "dist",
+    "coverage",
 )
 
 
@@ -85,7 +90,7 @@ def walk_repository(
                 continue
 
             repository_paths.append(path)
-            if path.suffix.lower() == ".md":
+            if path.suffix.lower() in {".md", ".markdown"}:
                 markdown_files.append(path)
 
     return sorted(markdown_files), repository_paths
@@ -403,7 +408,7 @@ def main() -> int:
         default=[],
         help=(
             "Repository-relative path to exclude. May be supplied multiple times. "
-            "Defaults already exclude .git and frontend/node_modules."
+            "Defaults already exclude common generated and dependency directories."
         ),
     )
     parser.add_argument(

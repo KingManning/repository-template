@@ -1,1 +1,1 @@
-Refer to [`AGENTS.md`](../AGENTS.md).
+Refer to [`AGENTS.md`](../AGENTS.md) in the repository root.

@@ -1,0 +1,129 @@
+{
+  "system": {
+    "exclude_path": [
+      ".git/**",
+      "node_modules/**",
+      ".next/**",
+      ".pytest_cache/**",
+      "bin/**",
+      "obj/**",
+      "build/**",
+      "dist/**",
+      "coverage/**"
+    ]
+  },
+  "extensions": {
+    "front-matter": {
+      "enabled": true
+    },
+    "markdown-tables": {
+      "enabled": true
+    }
+  },
+  "plugins": {
+    "selectively_enable_rules": true,
+    "MD001": {
+      "enabled": true,
+      "front_matter_title": ""
+    },
+    "MD003": {
+      "enabled": true,
+      "style": "atx"
+    },
+    "MD004": {
+      "enabled": true,
+      "style": "consistent"
+    },
+    "MD005": {
+      "enabled": true
+    },
+    "MD007": {
+      "enabled": true,
+      "indent": 2
+    },
+    "MD009": {
+      "enabled": true
+    },
+    "MD010": {
+      "enabled": true,
+      "code_blocks": false
+    },
+    "MD011": {
+      "enabled": true
+    },
+    "MD012": {
+      "enabled": true,
+      "maximum": 1
+    },
+    "MD018": {
+      "enabled": true
+    },
+    "MD019": {
+      "enabled": true
+    },
+    "MD022": {
+      "enabled": true
+    },
+    "MD023": {
+      "enabled": true
+    },
+    "MD024": {
+      "enabled": true,
+      "siblings_only": true
+    },
+    "MD029": {
+      "enabled": true,
+      "style": "ordered"
+    },
+    "MD030": {
+      "enabled": true
+    },
+    "MD031": {
+      "enabled": true
+    },
+    "MD032": {
+      "enabled": true
+    },
+    "MD034": {
+      "enabled": true
+    },
+    "MD038": {
+      "enabled": true
+    },
+    "MD039": {
+      "enabled": true
+    },
+    "MD040": {
+      "enabled": true
+    },
+    "MD042": {
+      "enabled": true
+    },
+    "MD045": {
+      "enabled": true
+    },
+    "MD046": {
+      "enabled": true,
+      "style": "fenced"
+    },
+    "MD047": {
+      "enabled": true
+    },
+    "MD048": {
+      "enabled": true,
+      "style": "backtick"
+    },
+    "MD051": {
+      "enabled": true
+    },
+    "MD056": {
+      "enabled": true
+    },
+    "MD058": {
+      "enabled": true
+    },
+    "MD059": {
+      "enabled": true
+    }
+  }
+}

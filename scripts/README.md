@@ -1,26 +1,38 @@
 # Scripts
 
-Contains repository scripts for various tasks, such as fixing markdown links, generating documentation, and more.
+## Markdown linting
 
-## Structure
-
-- [`fix_markdown_links.py`](./fix_markdown_links.py) - validates and repairs
-  repository Markdown links.
-
-## Fix Markdown Links
-
-Run the link validator from the repository root:
+Run these commands from the repository root. Install `pymarkdownlnt` once
+using the pinned [requirements](../requirements.txt).
 
 ```powershell
-# Preview changes
-npm run lint:links
-
-# Apply changes
-npm run lint:links:fix
+py -m pip install -r requirements.txt
 ```
 
-The root `npm run lint` command combines the link scan with Markdownlint.
-`npm run lint:fix` runs both repair commands.
+The [lint script](./lint_markdown.py) runs PyMarkdown with the repository's
+[configuration](../.pymarkdown.json).
 
-The focused link-resolver tests live in
-[Repository Tooling Tests](../tests/README.md).
+```powershell
+# Report lint issues (read-only)
+py scripts/lint_markdown.py
+
+# Apply supported fixes in place
+py scripts/lint_markdown.py --fix
+```
+
+The report lists the file, line, and rule for each issue. When PyMarkdown
+applies a fix, it prints `Fixed:` with the filename and returns exit code 3.
+Run the read-only command again to check for issues that need manual edits.
+
+## Internal Markdown links
+
+The [link checker](./fix_markdown_links.py) previews proposed link replacements
+by default. Review the replacements before applying them.
+
+```powershell
+# Preview link repairs
+py scripts/fix_markdown_links.py
+
+# Apply link repairs
+py scripts/fix_markdown_links.py --write
+```

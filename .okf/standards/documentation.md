@@ -84,20 +84,10 @@ These rules govern documentation authored in `.okf/`. They supplement the format
 
 # Markdown validation
 
-All Markdown documentation must comply with the repository
-[Markdownlint rule configuration](../../.markdownlint.jsonc), which owns the
-lint rules and their treatment of OKF YAML frontmatter. The
-[markdownlint-cli2 configuration](../../.markdownlint-cli2.jsonc) owns
-repository file selection and exclusions. The
-[root npm manifest](../../package.json) owns the combined validation commands,
-and the [workspace editor settings](../../.vscode/settings.json) use the same
-file selection.
-
-After creating or modifying Markdown files, run:
-
-```powershell
-npm run lint
-```
+After creating or modifying Markdown files, run the lint and link checks in the
+[Scripts README](../../scripts/README.md). The repository's
+[PyMarkdown configuration](../../.pymarkdown.json) defines the lint rules,
+frontmatter handling, and path exclusions.
 
 # Review checklist
 
